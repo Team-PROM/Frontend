@@ -2,12 +2,9 @@ const { app, BrowserWindow } = require("electron");
 const path = require("path");
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
-    },
+    width: 1143,
+    height: 832,
+    frame: false,
   });
   win.loadURL("http://localhost:3000");
 }
