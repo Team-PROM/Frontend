@@ -10,8 +10,6 @@ const Body = styled.div`
   height: 38px;
   text-align: center;
   line-height: 38px;
-  font-size: 14px;
-  color: white;
   transition: 0.2s ease-in-out;
   cursor: pointer;
   display: flex;

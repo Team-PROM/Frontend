@@ -30,32 +30,25 @@ export default function Menu() {
       </Project>
       <ButtonContainer>
         <MenuButton>
-          <_Icon icon='alarm' />
-          알림
+          <_Icon icon='alarm' select={true} />
         </MenuButton>
         <MenuButton>
           <_Icon icon='project' />
-          프로젝트
         </MenuButton>
         <MenuButton>
           <_Icon icon='list' />
-          작업
         </MenuButton>
         <MenuButton>
           <_Icon icon='calender' />
-          캘린더
         </MenuButton>
         <MenuButton>
           <_Icon icon='line' />
-          분석
         </MenuButton>
         <MenuButton>
           <_Icon icon='team' />
-          팀원
         </MenuButton>
         <MenuButton>
           <_Icon icon='question' />
-          이용약관
         </MenuButton>
       </ButtonContainer>
     </Body>
