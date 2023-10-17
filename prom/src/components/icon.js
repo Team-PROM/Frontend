@@ -1,11 +1,11 @@
 import { Icon } from "@iconify/react";
 import { ReactComponent as Alarm } from "../asset/gradientIcon/alarm.svg";
 import { ReactComponent as Calender } from "../asset/gradientIcon/calender.svg";
-import { ReactComponent as Line } from "../asset/gradientIcon/calender.svg";
-import { ReactComponent as List } from "../asset/gradientIcon/calender.svg";
-import { ReactComponent as Project } from "../asset/gradientIcon/calender.svg";
-import { ReactComponent as Question } from "../asset/gradientIcon/calender.svg";
-import { ReactComponent as Team } from "../asset/gradientIcon/calender.svg";
+import { ReactComponent as Line } from "../asset/gradientIcon/line.svg";
+import { ReactComponent as List } from "../asset/gradientIcon/list.svg";
+import { ReactComponent as Project } from "../asset/gradientIcon/project.svg";
+import { ReactComponent as Question } from "../asset/gradientIcon/question.svg";
+import { ReactComponent as Team } from "../asset/gradientIcon/team.svg";
 import { styled } from "styled-components";
 
 export default function _Icon({ select, icon }) {

@@ -46,12 +46,12 @@ export default function Menu() {
         </Link>
         <Link to='/'>
           <MenuButton>
-            <_Icon icon='project' select={select("/project")} />
+            <_Icon icon='project' select={select("/")} />
           </MenuButton>
         </Link>
         <Link to='/task'>
           <MenuButton>
-            <_Icon icon='list' select={select("/list")} />
+            <_Icon icon='list' select={select("/task")} />
           </MenuButton>
         </Link>
         <Link to='/calender'>
@@ -128,7 +128,4 @@ const TitleButton = styled.div`
 
 const ButtonContainer = styled.div`
   margin-top: 46px;
-  & > :last-child {
-    margin-top: 46px;
-  }
 `;
