@@ -4,6 +4,7 @@ import { theme } from "../styles/theme";
 import MenuButton from "./menuButton";
 import { Icon } from "@iconify/react";
 import _Icon from "./icon";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
   return (
@@ -29,27 +30,41 @@ export default function Menu() {
         </TitleButton>
       </Project>
       <ButtonContainer>
-        <MenuButton>
-          <_Icon icon='alarm' select={true} />
-        </MenuButton>
-        <MenuButton>
-          <_Icon icon='project' />
-        </MenuButton>
-        <MenuButton>
-          <_Icon icon='list' />
-        </MenuButton>
-        <MenuButton>
-          <_Icon icon='calender' />
-        </MenuButton>
-        <MenuButton>
-          <_Icon icon='line' />
-        </MenuButton>
-        <MenuButton>
-          <_Icon icon='team' />
-        </MenuButton>
-        <MenuButton>
-          <_Icon icon='question' />
-        </MenuButton>
+        <Link to='/alarm'>
+          <MenuButton>
+            <_Icon icon='alarm' select={true} />
+          </MenuButton>
+        </Link>
+        <Link to='/'>
+          <MenuButton>
+            <_Icon icon='project' />
+          </MenuButton>
+        </Link>
+        <Link to='/task'>
+          <MenuButton>
+            <_Icon icon='list' />
+          </MenuButton>
+        </Link>
+        <Link to='/calender'>
+          <MenuButton>
+            <_Icon icon='calender' />
+          </MenuButton>
+        </Link>
+        <Link to='/analysis'>
+          <MenuButton>
+            <_Icon icon='line' />
+          </MenuButton>
+        </Link>
+        <Link to='/team'>
+          <MenuButton>
+            <_Icon icon='team' />
+          </MenuButton>
+        </Link>
+        <Link to='/quide'>
+          <MenuButton>
+            <_Icon icon='question' />
+          </MenuButton>
+        </Link>
       </ButtonContainer>
     </Body>
   );
