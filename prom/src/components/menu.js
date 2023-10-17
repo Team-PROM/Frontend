@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import { theme } from "../styles/theme";
 import MenuButton from "./menuButton";
 import { Icon } from "@iconify/react";
+import _Icon from "./icon";
 
 export default function Menu() {
   return (
@@ -29,80 +30,31 @@ export default function Menu() {
       </Project>
       <ButtonContainer>
         <MenuButton>
-          <Icon
-            icon='clarity:bell-line'
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <_Icon icon='alarm' />
           알림
         </MenuButton>
         <MenuButton>
-          <Icon
-            icon='ion:rocket-outline'
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <_Icon icon='project' />
           프로젝트
         </MenuButton>
         <MenuButton>
-          <Icon
-            icon='fluent:task-list-20-filled'
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <_Icon icon='list' />
           작업
         </MenuButton>
         <MenuButton>
-          <Icon
-            icon='system-uicons:calendar'
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <_Icon icon='calender' />
           캘린더
         </MenuButton>
         <MenuButton>
-          <Icon
-            icon='ic:baseline-insights'
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <_Icon icon='line' />
           분석
         </MenuButton>
         <MenuButton>
-          <Icon
-            icon='ion:people-outline'
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <_Icon icon='team' />
           팀원
         </MenuButton>
         <MenuButton>
-          <Icon
-            icon='solar:question-circle-linear'
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <_Icon icon='question' />
           이용약관
         </MenuButton>
       </ButtonContainer>
@@ -123,6 +75,10 @@ const Project = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
 `;
 
 const TitleContainer = styled.div`
