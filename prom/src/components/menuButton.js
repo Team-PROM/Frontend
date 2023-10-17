@@ -13,6 +13,9 @@ const Body = styled.div`
   font-size: 14px;
   color: white;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
   &:hover {
     background-color: rgba(255, 255, 255, 0.3);
   }
