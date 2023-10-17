@@ -4,21 +4,19 @@ import { theme } from "./styles/theme";
 import GlobalStyle from "./styles/GlobalStyle";
 import Header from "./components/header";
 import Menu from "./components/menu";
+import { Router } from "./router";
 
 const width = window.innerWidth;
 const height = window.innerHeight;
 
 export default function App() {
-  console.log(width, height);
   return (
     <Wrapper>
       <GlobalStyle />
       <Menu></Menu>
       <SmallWrapper>
         <Header />
-        <Body width={width} height={height} theme={theme}>
-          body
-        </Body>
+        <Router />
       </SmallWrapper>
     </Wrapper>
   );
@@ -33,10 +31,4 @@ const SmallWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: calc(100% - 218px);
-`;
-
-const Body = styled.div`
-  width: 100%;
-  height: ${({ height }) => `${height}px`};
-  background-color: ${({ theme }) => `${theme.background}`};
 `;
