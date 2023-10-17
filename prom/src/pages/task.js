@@ -20,7 +20,7 @@ export default function TaskPage() {
 
   return (
     <Body height={height} theme={theme}>
-      AlarmPage
+      taskl
     </Body>
   );
 }
@@ -29,4 +29,6 @@ const Body = styled.div`
   width: 100%;
   height: ${({ height }) => `${height}px`};
   background-color: ${({ theme }) => `${theme.background}`};
+
+  color: white;
 `;

@@ -4,9 +4,18 @@ import { theme } from "../styles/theme";
 import MenuButton from "./menuButton";
 import { Icon } from "@iconify/react";
 import _Icon from "./icon";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Menu() {
+  const path = useLocation().pathname;
+
+  console.log(path);
+
+  const select = (selected) => {
+    console.log(selected, path, selected == path);
+    return selected == path;
+  };
+
   return (
     <Body theme={theme}>
       <Project>
@@ -32,37 +41,37 @@ export default function Menu() {
       <ButtonContainer>
         <Link to='/alarm'>
           <MenuButton>
-            <_Icon icon='alarm' select={true} />
+            <_Icon icon='alarm' select={select("/alarm")} />
           </MenuButton>
         </Link>
         <Link to='/'>
           <MenuButton>
-            <_Icon icon='project' />
+            <_Icon icon='project' select={select("/project")} />
           </MenuButton>
         </Link>
         <Link to='/task'>
           <MenuButton>
-            <_Icon icon='list' />
+            <_Icon icon='list' select={select("/list")} />
           </MenuButton>
         </Link>
         <Link to='/calender'>
           <MenuButton>
-            <_Icon icon='calender' />
+            <_Icon icon='calender' select={select("/calender")} />
           </MenuButton>
         </Link>
         <Link to='/analysis'>
           <MenuButton>
-            <_Icon icon='line' />
+            <_Icon icon='line' select={select("/analysis")} />
           </MenuButton>
         </Link>
         <Link to='/team'>
           <MenuButton>
-            <_Icon icon='team' />
+            <_Icon icon='team' select={select("/team")} />
           </MenuButton>
         </Link>
         <Link to='/guide'>
           <MenuButton>
-            <_Icon icon='question' />
+            <_Icon icon='question' select={select("/guide")} />
           </MenuButton>
         </Link>
       </ButtonContainer>
