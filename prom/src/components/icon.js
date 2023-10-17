@@ -26,63 +26,81 @@ export default function _Icon({ select, icon }) {
         );
       case "calender":
         return (
-          <Calender
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <Select>
+            <Calender
+              style={{
+                marginLeft: "30px",
+                marginRight: "15px",
+                fontSize: "20px",
+              }}
+            />
+            캘린더
+          </Select>
         );
       case "line":
         return (
-          <Line
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <Select>
+            <Line
+              style={{
+                marginLeft: "30px",
+                marginRight: "15px",
+                fontSize: "20px",
+              }}
+            />
+            분석
+          </Select>
         );
       case "list":
         return (
-          <List
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <Select>
+            <List
+              style={{
+                marginLeft: "30px",
+                marginRight: "15px",
+                fontSize: "20px",
+              }}
+            />
+            작업
+          </Select>
         );
       case "project":
         return (
-          <Project
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <Select>
+            <Project
+              style={{
+                marginLeft: "30px",
+                marginRight: "15px",
+                fontSize: "20px",
+              }}
+            />
+            프로젝트
+          </Select>
         );
       case "question":
         return (
-          <Question
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <Select>
+            <Question
+              style={{
+                marginLeft: "30px",
+                marginRight: "15px",
+                fontSize: "20px",
+              }}
+            />
+            이용 가이드
+          </Select>
         );
       case "team":
         return (
-          <Team
-            style={{
-              marginLeft: "30px",
-              marginRight: "15px",
-              fontSize: "20px",
-            }}
-          />
+          <Select>
+            <Team
+              style={{
+                marginLeft: "30px",
+                marginRight: "15px",
+                fontSize: "20px",
+              }}
+            />
+            팀원
+          </Select>
         );
     }
   } else {
