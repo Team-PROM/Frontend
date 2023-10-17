@@ -20,7 +20,7 @@ export default function _Icon({ select, icon }) {
                 marginRight: "15px",
                 fontSize: "20px",
               }}
-            />{" "}
+            />
             알림
           </Select>
         );
