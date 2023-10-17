@@ -60,7 +60,7 @@ export default function Menu() {
             <_Icon icon='team' />
           </MenuButton>
         </Link>
-        <Link to='/quide'>
+        <Link to='/guide'>
           <MenuButton>
             <_Icon icon='question' />
           </MenuButton>
