@@ -26,6 +26,7 @@ export default function App() {
 
 const Wrapper = styled.div`
   display: flex;
+  background-color: ${({ theme }) => `${theme.background}`};
 `;
 
 const SmallWrapper = styled.div`
