@@ -1,11 +1,14 @@
 import React from "react";
 import { styled } from "styled-components";
 import { theme } from "../styles/theme";
+import { Icon } from "@iconify/react";
 
 export default function Header() {
   return (
     <Body theme={theme}>
-      <WidgetButton></WidgetButton>
+      <WidgetButton>
+        <Icon icon='entypo:popup' style={{ fontSize: "21px" }} />
+      </WidgetButton>
       <RightBox>
         <TeamBox></TeamBox>
         <SubMenu></SubMenu>
@@ -29,7 +32,6 @@ const Body = styled.div`
 const WidgetButton = styled.div`
   width: 30px;
   height: 30px;
-  background-color: white;
 `;
 
 const RightBox = styled.div`
