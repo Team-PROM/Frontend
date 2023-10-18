@@ -9,10 +9,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function Menu() {
   const path = useLocation().pathname;
 
-  console.log(path);
-
   const select = (selected) => {
-    console.log(selected, path, selected == path);
     return selected == path;
   };
 
