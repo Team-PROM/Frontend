@@ -95,8 +95,9 @@ const Project = styled.div`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
   &:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 `;
 
