@@ -28,12 +28,14 @@ export default function Menu() {
             icon='bxs:up-arrow'
             style={{
               fontSize: "10px",
+              color: "#C2C2C2",
             }}
           />
           <Icon
             icon='bxs:down-arrow'
             style={{
               fontSize: "10px",
+              color: "#C2C2C2",
             }}
           />
         </TitleButton>
