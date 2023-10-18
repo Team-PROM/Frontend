@@ -13,12 +13,16 @@ const tasks = [
 ];
 
 const taskStatus = {
-  a: {
-    title: "a",
+  0: {
+    title: "할 일",
     items: tasks,
   },
-  b: {
-    title: "b",
+  1: {
+    title: "진행 중",
+    items: [],
+  },
+  2: {
+    title: "완료",
     items: [],
   },
 };
@@ -43,4 +47,5 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
+  gap: 30px;
 `;
