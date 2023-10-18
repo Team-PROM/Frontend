@@ -128,4 +128,9 @@ const TitleButton = styled.div`
 
 const ButtonContainer = styled.div`
   margin-top: 46px;
+  display: flex;
+  flex-direction: column;
+  & > :last-child {
+    margin-top: 46px;
+  }
 `;
