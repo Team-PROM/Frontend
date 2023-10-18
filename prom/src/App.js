@@ -5,6 +5,7 @@ import GlobalStyle from "./styles/GlobalStyle";
 import Header from "./components/header";
 import Menu from "./components/menu";
 import { Router } from "./router";
+import { GlobalFont } from "./styles/GlobalFont";
 
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -12,6 +13,7 @@ const height = window.innerHeight;
 export default function App() {
   return (
     <Wrapper>
+      <GlobalFont />
       <GlobalStyle />
       <Menu></Menu>
       <SmallWrapper>
