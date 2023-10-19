@@ -1,7 +1,7 @@
 import { Draggable } from "react-beautiful-dnd";
 import { styled } from "styled-components";
 
-export default function kanvanDrag({ item, index }) {
+export default function kanbanDrag({ item, index }) {
   return (
     <Draggable key={item.id} draggableId={item.id} index={index}>
       {(provided, snapshot) => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { DragDropContext } from "react-beautiful-dnd";
-import Column from "./kanvanDrop";
+import Column from "./kanbanDrop";
 import { onDragEnd } from "../func/onDragEnd";
 
 const tasks = [
@@ -24,7 +24,7 @@ const taskStatus = {
   },
 };
 
-function KanvanBoard() {
+function KanbanBoard() {
   const [columns, setColumns] = useState(taskStatus);
   return (
     <Container>
@@ -53,7 +53,7 @@ function KanvanBoard() {
   );
 }
 
-export default KanvanBoard;
+export default KanbanBoard;
 
 const Container = styled.div`
   height: 100%;

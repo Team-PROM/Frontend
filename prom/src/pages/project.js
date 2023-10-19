@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "styled-components";
 import { theme } from "../styles/theme";
-import KanvanBoard from "../components/kanvanBoard";
+import KanbanBoard from "../components/kanbanBoard";
 
 export default function ProjectPage() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -21,7 +21,7 @@ export default function ProjectPage() {
 
   return (
     <Body height={height} theme={theme}>
-      <KanvanBoard></KanvanBoard>
+      <KanbanBoard></KanbanBoard>
     </Body>
   );
 }
