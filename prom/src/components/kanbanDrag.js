@@ -1,5 +1,6 @@
 import { Draggable } from "react-beautiful-dnd";
 import { styled } from "styled-components";
+import { theme } from "../styles/theme";
 
 export default function kanbanDrag({ item, index }) {
   return (
@@ -14,7 +15,10 @@ export default function kanbanDrag({ item, index }) {
             style={{
               ...provided.draggableProps.style,
             }}>
-            {item.content}
+            <BlockTop theme={theme}>
+              <span>제목인거죠</span>
+              <span>60%</span>
+            </BlockTop>
           </Block>
         );
       }}
@@ -24,8 +28,33 @@ export default function kanbanDrag({ item, index }) {
 
 const Block = styled.div`
   user-select: none;
-  width: 100%;
-  height: 100px;
+  width: calc(100% - 24px);
+  padding: 6px 8px 6px 16px;
+  height: 88px;
   color: white;
   background-color: ${({ isDrag }) => (isDrag ? "lightGray" : "gray")};
 `;
+
+const BlockTop = styled.div`
+  font-size: 12px;
+  font-weight: 300;
+  color: ${({ theme }) => theme.text3};
+  display: flex;
+  justify-content: space-between;
+
+  > :last-child {
+    width: 36px;
+    height: 22px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: ${({ theme }) => theme.white};
+    background-color: #00b5ff;
+    text-align: center;
+    line-height: 22px;
+  }
+`;
+
+const BlockMiddle = styled.div``;
+
+const BlockBottom = styled.div``;
