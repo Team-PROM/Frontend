@@ -27,6 +27,7 @@ export default function kanbanDrag({ item, index }) {
 }
 
 const Block = styled.div`
+  margin-top: 10px;
   user-select: none;
   width: calc(280px - 26px);
   padding: 6px 8px 6px 16px;

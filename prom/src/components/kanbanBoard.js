@@ -72,7 +72,7 @@ const TitleContainer = styled.div`
   width: 900px;
   display: flex;
   gap: 30px;
-  margin-bottom: 36px;
+  margin-bottom: 26px;
 `;
 
 const Title = styled.div`

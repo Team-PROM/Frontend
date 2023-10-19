@@ -30,6 +30,9 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-width: 280px;
   height: 600px;
   overflow-y: auto;
