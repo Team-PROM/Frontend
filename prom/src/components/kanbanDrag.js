@@ -28,11 +28,14 @@ export default function kanbanDrag({ item, index }) {
 
 const Block = styled.div`
   user-select: none;
-  width: calc(100% - 24px);
+  width: calc(100% - 26px);
   padding: 6px 8px 6px 16px;
   height: 88px;
   color: white;
   background-color: ${({ isDrag }) => (isDrag ? "lightGray" : "gray")};
+  background-color: #252631;
+  border: 0.5px solid #505866;
+  border-radius: 5px;
 `;
 
 const BlockTop = styled.div`
