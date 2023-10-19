@@ -30,6 +30,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  width: 280px;
+  min-width: 280px;
   height: 600px;
+  overflow-y: auto;
 `;

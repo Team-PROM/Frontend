@@ -28,7 +28,7 @@ export default function kanbanDrag({ item, index }) {
 
 const Block = styled.div`
   user-select: none;
-  width: calc(100% - 26px);
+  width: calc(280px - 26px);
   padding: 6px 8px 6px 16px;
   height: 88px;
   color: white;
