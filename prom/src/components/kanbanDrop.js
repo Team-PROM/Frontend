@@ -1,5 +1,5 @@
 import { Droppable } from "react-beautiful-dnd";
-import kanbanDrag from "./kanbanDrag";
+import Item from "./kanbanDrag";
 import { styled } from "styled-components";
 
 export default function kanbanDrop({ columnId, column }) {
@@ -10,7 +10,7 @@ export default function kanbanDrop({ columnId, column }) {
           return (
             <Container {...provided.droppableProps} ref={provided.innerRef}>
               {column.items.map((item, index) => {
-                return <kanbanDrag item={item} index={index} />;
+                return <Item item={item} index={index} />;
               })}
               {provided.placeholder}
             </Container>
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 280px;
+  min-width: 280px;
   height: 600px;
 `;
 

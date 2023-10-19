@@ -24,8 +24,8 @@ export default function kanbanDrag({ item, index }) {
 
 const Block = styled.div`
   user-select: none;
-  padding: 16px;
-  min-height: 50px;
+  width: 100%;
+  height: 100px;
   color: white;
   background-color: ${({ isDrag }) => (isDrag ? "lightGray" : "gray")};
 `;
