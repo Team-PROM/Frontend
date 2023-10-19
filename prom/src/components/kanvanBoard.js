@@ -14,15 +14,12 @@ const tasks = [
 
 const taskStatus = {
   0: {
-    title: "할 일",
     items: tasks,
   },
   1: {
-    title: "진행 중",
     items: [],
   },
   2: {
-    title: "완료",
     items: [],
   },
 };
@@ -30,22 +27,64 @@ const taskStatus = {
 function KanvanBoard() {
   const [columns, setColumns] = useState(taskStatus);
   return (
-    <Wrapper>
-      <DragDropContext
-        onDragEnd={(result) => onDragEnd(result, columns, setColumns)}>
-        {Object.entries(columns).map(([columnId, column], index) => {
-          return <Column columnId={columnId} column={column} />;
-        })}
-      </DragDropContext>
-    </Wrapper>
+    <Container>
+      <TitleContainer>
+        <Title>
+          <TitleImg src='imgs/todo.svg' />할 일
+        </Title>
+        <Title>
+          <TitleImg src='imgs/progress.svg' />
+          진행 중
+        </Title>
+        <Title>
+          <TitleImg src='imgs/complete.svg' />
+          완료
+        </Title>
+      </TitleContainer>
+      <Wrapper>
+        <DragDropContext
+          onDragEnd={(result) => onDragEnd(result, columns, setColumns)}>
+          {Object.entries(columns).map(([columnId, column], index) => {
+            return <Column columnId={columnId} column={column} />;
+          })}
+        </DragDropContext>
+      </Wrapper>
+    </Container>
   );
 }
 
 export default KanvanBoard;
 
+const Container = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  height: 100%;
   gap: 30px;
+`;
+
+const TitleContainer = styled.div`
+  width: 900px;
+  display: flex;
+  gap: 30px;
+  margin-bottom: 36px;
+`;
+
+const Title = styled.div`
+  width: 280px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+`;
+
+const TitleImg = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 `;
