@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./kanbanDrop";
 import { onDragEnd } from "../func/onDragEnd";
+import SelectMenu from "./selectMenu";
 
 const tasks = [
   { id: "1", content: "First task" },
@@ -28,17 +29,18 @@ function KanbanBoard() {
   const [columns, setColumns] = useState(taskStatus);
   return (
     <Container>
+      <SelectMenu />
       <TitleContainer>
         <Title>
-          <TitleImg src='imgs/todo.svg' />할 일
+          <TitleImg src='imgs/todo.svg' />할 일({columns[0].items.length})
         </Title>
         <Title>
           <TitleImg src='imgs/progress.svg' />
-          진행 중
+          진행 중({columns[1].items.length})
         </Title>
         <Title>
           <TitleImg src='imgs/complete.svg' />
-          완료
+          완료({columns[2].items.length})
         </Title>
       </TitleContainer>
       <Wrapper>
@@ -65,13 +67,12 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 `;
 
 const TitleContainer = styled.div`
-  width: 900px;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   margin-bottom: 26px;
 `;
 
