@@ -6,11 +6,16 @@ import { onDragEnd } from "../func/onDragEnd";
 import SelectMenu from "./selectMenu";
 
 const tasks = [
-  { id: "1", content: "First task" },
-  { id: "2", content: "Second task" },
-  { id: "3", content: "Third task" },
-  { id: "4", content: "Fourth task" },
-  { id: "5", content: "Fifth task" },
+  {
+    id: "1",
+    title: "첫번째 아이템",
+    content: "nangnjkagnji\ndavanda\nvn\nakf",
+    progress: 39,
+  },
+  { id: "2", title: "두번째 아이템", content: "Second task", progress: 100 },
+  { id: "3", title: "세번째 아이템", content: "Third task", progress: 42 },
+  { id: "4", title: "네번째 아이템", content: "Fourth task", progress: 80 },
+  { id: "5", title: "다섯번째 아이템", content: "Fifth task", progress: 2 },
 ];
 
 const taskStatus = {
