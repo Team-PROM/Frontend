@@ -16,9 +16,21 @@ export default function kanbanDrag({ item, index }) {
               ...provided.draggableProps.style,
             }}>
             <BlockTop theme={theme}>
-              <span>제목인거죠</span>
-              <span>60%</span>
+              <span>{item.title}</span>
+              <span>{item.progress}%</span>
             </BlockTop>
+            <BlockMiddle>
+              <div></div>
+              <TextBox>
+                {item.content.split("\n").map((element) => (
+                  <div>{element}</div>
+                ))}
+              </TextBox>
+            </BlockMiddle>
+            <BlockBottom>
+              <TagBox></TagBox>
+              <span>3일 남음</span>
+            </BlockBottom>
           </Block>
         );
       }}
@@ -30,13 +42,15 @@ const Block = styled.div`
   margin-top: 10px;
   user-select: none;
   width: calc(280px - 26px);
-  padding: 6px 8px 6px 16px;
-  height: 88px;
+  padding: 8px 12px 8px 12px;
+  min-height: 84px;
   color: white;
-  background-color: ${({ isDrag }) => (isDrag ? "lightGray" : "gray")};
   background-color: #252631;
-  border: 0.5px solid #505866;
+  border: 1px solid #505866;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `;
 
 const BlockTop = styled.div`
@@ -45,6 +59,7 @@ const BlockTop = styled.div`
   color: ${({ theme }) => theme.text3};
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   > :last-child {
     width: 36px;
@@ -56,9 +71,46 @@ const BlockTop = styled.div`
     background-color: #00b5ff;
     text-align: center;
     line-height: 22px;
+    cursor: default;
   }
 `;
 
-const BlockMiddle = styled.div``;
+const BlockMiddle = styled.div`
+  display: flex;
+  > :first-child {
+    width: 24px;
+    height: 24px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+`;
 
-const BlockBottom = styled.div``;
+const BlockBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  > :last-child {
+    color: #ff6060;
+    font-size: 12px;
+    font-weight: 500;
+  }
+`;
+
+const TagBox = styled.div`
+  display: flex;
+  gap: 5px;
+  background-color: black;
+  width: 10px;
+  height: 12px;
+`;
+
+const TextBox = styled.div`
+  > :first-child {
+    margin-top: 5px;
+  }
+  div {
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+  }
+`;
