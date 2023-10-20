@@ -7,9 +7,6 @@ import Menu from "./components/menu";
 import { Router } from "./router";
 import { GlobalFont } from "./styles/GlobalFont";
 
-const width = window.innerWidth;
-const height = window.innerHeight;
-
 export default function App() {
   return (
     <Wrapper>
@@ -27,6 +24,7 @@ export default function App() {
 const Wrapper = styled.div`
   display: flex;
   background-color: ${({ theme }) => `${theme.background}`};
+  position: fixed;
 `;
 
 const SmallWrapper = styled.div`
