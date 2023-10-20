@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styled } from "styled-components";
 import { theme } from "../styles/theme";
 import { Icon } from "@iconify/react";
 
 export default function Header() {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const setSize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+
+    window.addEventListener("resize", setSize);
+    return () => {
+      window.removeEventListener("resize", setSize);
+    };
+  }, []);
+
   return (
-    <Body theme={theme}>
+    <Body theme={theme} width={width}>
       <WidgetButton>
         <Icon icon='entypo:popup' style={{ fontSize: "21px" }} />
       </WidgetButton>
@@ -18,7 +33,7 @@ export default function Header() {
 }
 
 const Body = styled.div`
-  width: calc(100% - 68px);
+  width: ${({ width }) => `${width - 286}px`};
   padding: 0 43px 0 25px;
   height: 60px;
   background-color: ${({ theme }) => theme.background};
