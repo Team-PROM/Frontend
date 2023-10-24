@@ -8,7 +8,7 @@ import { ReactComponent as Question } from "../asset/gradientIcon/question.svg";
 import { ReactComponent as Team } from "../asset/gradientIcon/team.svg";
 import { styled } from "styled-components";
 
-export default function _Icon({ select, icon, path }) {
+export default function _Icon({ icon, path }) {
   if (path == icon) {
     switch (icon) {
       case "alarm":
