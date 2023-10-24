@@ -5,9 +5,6 @@ const GlobalStyle = createGlobalStyle`
     margin:0;
     overflow: hidden;
     font-family:"Pretendard";
-    & ::selection {
-      background-color:rgba(0,0,0,0)
-    }
   }
   a {
     text-decoration:none;
