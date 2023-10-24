@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
 import { theme } from "../styles/theme";
 import MenuButton from "./menuButton";
 import { Icon } from "@iconify/react";
 import _Icon from "./icon";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+const buttons = [
+  { path: "alarm" },
+  { path: "/" },
+  { path: "task" },
+  { path: "calendar" },
+  { path: "analysis" },
+  { path: "team" },
+  { path: "guide" },
+];
 
 export default function Menu() {
-  const path = useLocation().pathname;
+  const [path, setPath] = useState("/");
+
+  const link = useNavigate();
+
+  const onNavigate = (url) => {
+    setPath(url);
+    link(`/${url}`);
+  };
 
   const select = (selected) => {
     return selected == path;
@@ -38,41 +55,14 @@ export default function Menu() {
         </TitleButton>
       </Project>
       <ButtonContainer>
-        <Link to='/alarm'>
-          <MenuButton>
-            <_Icon icon='alarm' select={select("/alarm")} />
+        {buttons.map((element) => (
+          <MenuButton
+            event={() => {
+              onNavigate(element.path);
+            }}>
+            <_Icon icon={element.path} path={path} />
           </MenuButton>
-        </Link>
-        <Link to='/'>
-          <MenuButton>
-            <_Icon icon='project' select={select("/")} />
-          </MenuButton>
-        </Link>
-        <Link to='/task'>
-          <MenuButton>
-            <_Icon icon='list' select={select("/task")} />
-          </MenuButton>
-        </Link>
-        <Link to='/calender'>
-          <MenuButton>
-            <_Icon icon='calender' select={select("/calender")} />
-          </MenuButton>
-        </Link>
-        <Link to='/analysis'>
-          <MenuButton>
-            <_Icon icon='line' select={select("/analysis")} />
-          </MenuButton>
-        </Link>
-        <Link to='/team'>
-          <MenuButton>
-            <_Icon icon='team' select={select("/team")} />
-          </MenuButton>
-        </Link>
-        <Link to='/guide'>
-          <MenuButton>
-            <_Icon icon='question' select={select("/guide")} />
-          </MenuButton>
-        </Link>
+        ))}
       </ButtonContainer>
     </Body>
   );

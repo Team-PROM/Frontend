@@ -1,8 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
 
-export default function MenuButton({ children }) {
-  return <Body>{children}</Body>;
+export default function MenuButton({ children, event }) {
+  return <Body onClick={event}>{children}</Body>;
 }
 
 const Body = styled.div`

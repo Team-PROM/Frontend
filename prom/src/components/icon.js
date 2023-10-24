@@ -8,8 +8,9 @@ import { ReactComponent as Question } from "../asset/gradientIcon/question.svg";
 import { ReactComponent as Team } from "../asset/gradientIcon/team.svg";
 import { styled } from "styled-components";
 
-export default function _Icon({ select, icon }) {
-  if (select) {
+export default function _Icon({ select, icon, path }) {
+  console.log(path, icon);
+  if (path == icon) {
     switch (icon) {
       case "alarm":
         return (
@@ -24,7 +25,7 @@ export default function _Icon({ select, icon }) {
             알림
           </Select>
         );
-      case "calender":
+      case "calendar":
         return (
           <Select>
             <Calender
@@ -37,7 +38,7 @@ export default function _Icon({ select, icon }) {
             캘린더
           </Select>
         );
-      case "line":
+      case "analysis":
         return (
           <Select>
             <Line
@@ -50,7 +51,7 @@ export default function _Icon({ select, icon }) {
             분석
           </Select>
         );
-      case "list":
+      case "task":
         return (
           <Select>
             <List
@@ -63,7 +64,7 @@ export default function _Icon({ select, icon }) {
             작업
           </Select>
         );
-      case "project":
+      case "/":
         return (
           <Select>
             <Project
@@ -76,7 +77,7 @@ export default function _Icon({ select, icon }) {
             프로젝트
           </Select>
         );
-      case "question":
+      case "guide":
         return (
           <Select>
             <Question
@@ -119,7 +120,7 @@ export default function _Icon({ select, icon }) {
             알림
           </NoSelect>
         );
-      case "calender":
+      case "calendar":
         return (
           <NoSelect>
             <Icon
@@ -133,7 +134,7 @@ export default function _Icon({ select, icon }) {
             캘린더
           </NoSelect>
         );
-      case "line":
+      case "analysis":
         return (
           <NoSelect>
             <Icon
@@ -147,7 +148,7 @@ export default function _Icon({ select, icon }) {
             분석
           </NoSelect>
         );
-      case "list":
+      case "task":
         return (
           <NoSelect>
             <Icon
@@ -161,7 +162,7 @@ export default function _Icon({ select, icon }) {
             작업
           </NoSelect>
         );
-      case "project":
+      case "/":
         return (
           <NoSelect>
             <Icon
@@ -175,7 +176,7 @@ export default function _Icon({ select, icon }) {
             프로젝트
           </NoSelect>
         );
-      case "question":
+      case "guide":
         return (
           <NoSelect>
             <Icon

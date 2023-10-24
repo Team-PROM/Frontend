@@ -13,7 +13,7 @@ export const Router = () => {
       <Route path='/' element={<ProjectPage></ProjectPage>} />
       <Route path='/alarm' element={<AlarmPage></AlarmPage>} />
       <Route path='/analysis' element={<AnalysisPage></AnalysisPage>} />
-      <Route path='/calender' element={<CalenderPage></CalenderPage>} />
+      <Route path='/calendar' element={<CalenderPage></CalenderPage>} />
       <Route path='/guide' element={<GuidePage></GuidePage>} />
       <Route path='/task' element={<TaskPage></TaskPage>} />
       <Route path='/team' element={<TeamPage></TeamPage>} />
