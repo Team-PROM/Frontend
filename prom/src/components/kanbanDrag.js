@@ -22,8 +22,8 @@ export default function kanbanDrag({ item, index }) {
             <BlockMiddle>
               <div></div>
               <TextBox>
-                {item.content.split("\n").map((element) => (
-                  <div>{element}</div>
+                {item.content.split("\n").map((element, index) => (
+                  <div key={index}>{element}</div>
                 ))}
               </TextBox>
             </BlockMiddle>

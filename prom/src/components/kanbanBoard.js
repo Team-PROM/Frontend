@@ -49,8 +49,10 @@ function KanbanBoard() {
       <Wrapper>
         <DragDropContext
           onDragEnd={(result) => onDragEnd(result, columns, setColumns)}>
-          {Object.entries(columns).map(([columnId, column], index) => {
-            return <Column columnId={columnId} column={column} />;
+          {Object.entries(columns).map(([columnId, column]) => {
+            return (
+              <Column columnId={columnId} column={column} key={columnId} />
+            );
           })}
         </DragDropContext>
       </Wrapper>

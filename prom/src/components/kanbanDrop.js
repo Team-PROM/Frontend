@@ -4,13 +4,13 @@ import { styled } from "styled-components";
 
 export default function kanbanDrop({ columnId, column }) {
   return (
-    <Wrapper key={columnId}>
+    <Wrapper>
       <Droppable droppableId={columnId} key={columnId}>
         {(provided, snapshot) => {
           return (
             <Container {...provided.droppableProps} ref={provided.innerRef}>
               {column.items.map((item, index) => {
-                return <Item item={item} index={index} />;
+                return <Item item={item} index={index} key={index} />;
               })}
               {provided.placeholder}
             </Container>

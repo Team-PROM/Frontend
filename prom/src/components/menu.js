@@ -55,11 +55,12 @@ export default function Menu() {
         </TitleButton>
       </Project>
       <ButtonContainer>
-        {buttons.map((element) => (
+        {buttons.map((element, index) => (
           <MenuButton
             event={() => {
               onNavigate(element.path);
-            }}>
+            }}
+            key={index}>
             <_Icon icon={element.path} path={path} />
           </MenuButton>
         ))}
