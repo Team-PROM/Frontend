@@ -9,7 +9,7 @@ import { ReactComponent as Team } from "../asset/gradientIcon/team.svg";
 import { styled } from "styled-components";
 
 export default function _Icon({ icon, path }) {
-  if (path == icon) {
+  if (path === icon) {
     switch (icon) {
       case "alarm":
         return (
@@ -102,6 +102,8 @@ export default function _Icon({ icon, path }) {
             팀원
           </Select>
         );
+      default:
+        return null;
     }
   } else {
     switch (icon) {
@@ -203,6 +205,8 @@ export default function _Icon({ icon, path }) {
             팀원
           </NoSelect>
         );
+      default:
+        return null;
     }
   }
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { styled, css } from "styled-components";
-import ToggleButton from "./toggleButton";
 import { Icon } from "@iconify/react";
 import { theme } from "../styles/theme";
 
@@ -72,6 +71,8 @@ export default function SelectMenu({ keyword }) {
           </Arrow>
         </Container>
       );
+    default:
+      return null;
   }
 }
 
