@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import { theme } from "../styles/theme";
 import MenuButton from "./menuButton";
 import { Icon } from "@iconify/react";
-import _Icon from "./icon";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import _Icon from "../icon";
+import { useNavigate } from "react-router-dom";
 
 const buttons = [
   { path: "alarm" },
@@ -26,16 +25,12 @@ export default function Menu() {
     link(`/${url}`);
   };
 
-  const select = (selected) => {
-    return selected == path;
-  };
-
   return (
-    <Body theme={theme}>
+    <Body>
       <Project>
         <TitleContainer>
           <TitleLogo></TitleLogo>
-          <TitleText theme={theme}>APPLE</TitleText>
+          <TitleText>APPLE</TitleText>
         </TitleContainer>
         <TitleButton>
           <Icon
@@ -71,7 +66,7 @@ export default function Menu() {
 
 const Body = styled.div`
   width: 218px;
-  background-color: ${({ theme }) => theme.menuback};
+  background-color: ${({ theme }) => theme.color.menuback};
   color: white;
 `;
 
@@ -106,7 +101,7 @@ const TitleLogo = styled.div`
 
 const TitleText = styled.div`
   font-size: 22px;
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.color.white};
   font-weight: 700;
 `;
 

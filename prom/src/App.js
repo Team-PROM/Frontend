@@ -1,9 +1,9 @@
 import React from "react";
-import { styled } from "styled-components";
-import { theme } from "./styles/theme";
+import { ThemeProvider, styled } from "styled-components";
+import { theme, themeColor } from "./styles/theme";
 import GlobalStyle from "./styles/GlobalStyle";
-import Header from "./components/header";
-import Menu from "./components/menu";
+import Header from "./components/common/header";
+import Menu from "./components/common/menu";
 import { Router } from "./router";
 import { GlobalFont } from "./styles/GlobalFont";
 
@@ -12,11 +12,13 @@ export default function App() {
     <Wrapper>
       <GlobalFont />
       <GlobalStyle />
-      <Menu></Menu>
-      <SmallWrapper>
-        <Header />
-        <Router />
-      </SmallWrapper>
+      <ThemeProvider theme={theme}>
+        <Menu></Menu>
+        <SmallWrapper>
+          <Header />
+          <Router />
+        </SmallWrapper>
+      </ThemeProvider>
     </Wrapper>
   );
 }
