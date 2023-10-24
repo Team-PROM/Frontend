@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./kanbanDrop";
 import { onDragEnd } from "../func/onDragEnd";
-import SelectMenu from "./selectMenu";
 
 const tasks = [
   {
@@ -34,7 +33,6 @@ function KanbanBoard() {
   const [columns, setColumns] = useState(taskStatus);
   return (
     <Container>
-      <SelectMenu />
       <TitleContainer>
         <Title>
           <TitleImg src='imgs/todo.svg' />할 일({columns[0].items.length})
