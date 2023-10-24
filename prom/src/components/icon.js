@@ -209,6 +209,7 @@ export default function _Icon({ icon, path }) {
 
 const Select = styled.div`
   font-size: 14px;
+  font-weight: 900;
   background: var(
     --purple-gradation,
     linear-gradient(180deg, #ee9ae5 0%, #5961f9 100%)
