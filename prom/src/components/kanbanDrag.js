@@ -44,9 +44,9 @@ const Block = styled.div`
   width: calc(280px - 26px);
   padding: 8px 12px 8px 12px;
   min-height: 84px;
-  color: white;
-  background-color: #252631;
-  border: 1px solid #505866;
+  color: ${({ theme }) => theme.color.white};
+  background-color: ${({ theme }) => theme.color.menuback};
+  border: 1px solid ${({ theme }) => theme.color.text2};
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -54,9 +54,9 @@ const Block = styled.div`
 `;
 
 const BlockTop = styled.div`
-  font-size: 12px;
-  font-weight: 300;
-  color: ${({ theme }) => theme.text3};
+  font-size: ${({ theme }) => theme.size.microLight};
+  font-weight: ${({ theme }) => theme.weight.microLight};
+  color: ${({ theme }) => theme.color.sub3};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,9 +65,9 @@ const BlockTop = styled.div`
     width: 36px;
     height: 22px;
     border-radius: 4px;
-    font-size: 12px;
-    font-weight: 500;
-    color: ${({ theme }) => theme.white};
+    font-size: ${({ theme }) => theme.size.microMedium};
+    font-weight: ${({ theme }) => theme.weight.microMedium};
+    color: ${({ theme }) => theme.color.white};
     background-color: #00b5ff;
     text-align: center;
     line-height: 22px;
@@ -91,8 +91,8 @@ const BlockBottom = styled.div`
   justify-content: space-between;
   > :last-child {
     color: #ff6060;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: ${({ theme }) => theme.size.microMedium};
+    font-weight: ${({ theme }) => theme.weight.microMedium};
   }
 `;
 
@@ -109,8 +109,8 @@ const TextBox = styled.div`
     margin-top: 5px;
   }
   div {
-    font-size: 12px;
-    font-weight: 500;
-    color: white;
+    font-size: ${({ theme }) => theme.size.microMedium};
+    font-weight: ${({ theme }) => theme.weight.microMedium};
+    color: ${({ theme }) => theme.color.white};
   }
 `;
