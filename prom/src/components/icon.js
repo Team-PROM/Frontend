@@ -9,7 +9,6 @@ import { ReactComponent as Team } from "../asset/gradientIcon/team.svg";
 import { styled } from "styled-components";
 
 export default function _Icon({ select, icon, path }) {
-  console.log(path, icon);
   if (path == icon) {
     switch (icon) {
       case "alarm":
