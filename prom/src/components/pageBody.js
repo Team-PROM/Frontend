@@ -8,7 +8,6 @@ export default function Body({ children }) {
   const [height, setHeight] = useState(window.innerHeight);
 
   const wife = navigator.onLine;
-  console.log(wife);
 
   useEffect(() => {
     const setSize = () => {
