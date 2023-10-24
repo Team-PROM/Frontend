@@ -11,7 +11,7 @@ export default function kanbanDrag({ item, index }) {
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
-            isDrag={snapshot.isDragging}
+            // isDrag={snapshot.isDragging}
             style={{
               ...provided.draggableProps.style,
             }}>
