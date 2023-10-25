@@ -40,6 +40,7 @@ const Button = styled.div`
   transition: 0.1s linear;
   margin-left: ${({ on }) => (on ? "26px" : "0px")};
   display: flex;
+  overflow: hidden;
 `;
 
 const IconContainer = styled.div`
