@@ -3,8 +3,10 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   * {
     margin:0;
-    overflow: hidden;
     font-family:"Pretendard";
+  }
+  body {
+    overflow:hidden;
   }
   a {
     text-decoration:none;
