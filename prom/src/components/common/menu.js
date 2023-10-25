@@ -17,6 +17,14 @@ const buttons = [
 
 export default function Menu() {
   const [path, setPath] = useState("/");
+  const rand = {
+    a: Math.floor(Math.random() * 256),
+    b: Math.floor(Math.random() * 256),
+    c: Math.floor(Math.random() * 256),
+    d: Math.floor(Math.random() * 256),
+    e: Math.floor(Math.random() * 256),
+    f: Math.floor(Math.random() * 256),
+  };
 
   const link = useNavigate();
 
@@ -27,47 +35,56 @@ export default function Menu() {
 
   return (
     <Body>
-      <Project>
-        <TitleContainer>
-          <TitleLogo></TitleLogo>
-          <TitleText>APPLE</TitleText>
-        </TitleContainer>
-        <TitleButton>
-          <Icon
-            icon='bxs:up-arrow'
-            style={{
-              fontSize: "10px",
-              color: "#C2C2C2",
-            }}
-          />
-          <Icon
-            icon='bxs:down-arrow'
-            style={{
-              fontSize: "10px",
-              color: "#C2C2C2",
-            }}
-          />
-        </TitleButton>
-      </Project>
-      <ButtonContainer>
-        {buttons.map((element, index) => (
-          <MenuButton
-            event={() => {
-              onNavigate(element.path);
-            }}
-            key={index}>
-            <_Icon icon={element.path} path={path} />
-          </MenuButton>
-        ))}
-      </ButtonContainer>
+      <Color
+        style={{
+          background: `linear-gradient(135deg, rgba(${rand.a}, ${rand.b}, ${rand.c}, 0.30) 0%, rgba(${rand.d}, ${rand.e}, ${rand.f}, 0.30) 100%)`,
+        }}>
+        <Project>
+          <TitleContainer>
+            <TitleLogo></TitleLogo>
+            <TitleText>APPLE</TitleText>
+          </TitleContainer>
+          <TitleButton>
+            <Icon
+              icon='bxs:up-arrow'
+              style={{
+                fontSize: "10px",
+                color: "#C2C2C2",
+              }}
+            />
+            <Icon
+              icon='bxs:down-arrow'
+              style={{
+                fontSize: "10px",
+                color: "#C2C2C2",
+              }}
+            />
+          </TitleButton>
+        </Project>
+        <ButtonContainer>
+          {buttons.map((element, index) => (
+            <MenuButton
+              event={() => {
+                onNavigate(element.path);
+              }}
+              key={index}>
+              <_Icon icon={element.path} path={path} />
+            </MenuButton>
+          ))}
+        </ButtonContainer>
+      </Color>
     </Body>
   );
 }
 
 const Body = styled.div`
   width: 218px;
-  background-color: ${({ theme }) => theme.color.menuback};
+  background-color: ${({ theme }) => theme.color.background};
   color: white;
+`;
+
+const Color = styled.div`
+  height: 100%;
 `;
 
 const Project = styled.div`
