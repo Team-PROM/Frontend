@@ -32,18 +32,20 @@ export default function SelectMenu({ keyword }) {
             </Arrow>
             <DropBox
               on={on}
-              onMouseOver={() => {
-                setMouseOver(false);
+              onMouseEnter={() => {
+                setMouseOver(true);
               }}
               onMouseLeave={() => {
-                setMouseOver(true);
+                setMouseOver(false);
               }}></DropBox>
           </Container>
 
           <Back
             on={on}
             onClick={() => {
-              setOn(false);
+              if (!mouseOver) {
+                setOn(false);
+              }
             }}></Back>
         </>
       );
@@ -52,7 +54,7 @@ export default function SelectMenu({ keyword }) {
         <>
           <Container
             onClick={() => {
-              setOn(!on);
+              setOn(true);
             }}>
             <Icon_>
               <Icon
@@ -69,13 +71,22 @@ export default function SelectMenu({ keyword }) {
                 width='10'
               />
             </Arrow>
-            <DropBox on={on}></DropBox>
+            <DropBox
+              on={on}
+              onMouseEnter={() => {
+                setMouseOver(true);
+              }}
+              onMouseLeave={() => {
+                setMouseOver(false);
+              }}></DropBox>
           </Container>
 
           <Back
             on={on}
             onClick={() => {
-              setOn(false);
+              if (!mouseOver) {
+                setOn(false);
+              }
             }}></Back>
         </>
       );
@@ -84,7 +95,7 @@ export default function SelectMenu({ keyword }) {
         <>
           <Container
             onClick={() => {
-              setOn(!on);
+              setOn(true);
             }}>
             <Icon_>
               <Icon icon='ph:tag-fill' color={theme.color.sub2} width='14' />
@@ -97,13 +108,22 @@ export default function SelectMenu({ keyword }) {
                 width='10'
               />
             </Arrow>
-            <DropBox on={on}></DropBox>
+            <DropBox
+              on={on}
+              onMouseEnter={() => {
+                setMouseOver(true);
+              }}
+              onMouseLeave={() => {
+                setMouseOver(false);
+              }}></DropBox>
           </Container>
 
           <Back
             on={on}
             onClick={() => {
-              setOn(false);
+              if (!mouseOver) {
+                setOn(false);
+              }
             }}></Back>
         </>
       );
