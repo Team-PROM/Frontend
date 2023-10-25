@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { styled, css } from "styled-components";
 import { Icon } from "@iconify/react";
 import { theme } from "../styles/theme";
@@ -12,11 +12,10 @@ export default function SelectMenu({ keyword }) {
         <Container
           onClick={() => {
             setOn(!on);
-            console.log(on);
           }}>
-          <div>
+          <Icon_>
             <Icon icon='ion:people-sharp' color={theme.color.sub2} width='14' />
-          </div>
+          </Icon_>
           팀원
           <Arrow on={on}>
             <Icon
@@ -25,6 +24,7 @@ export default function SelectMenu({ keyword }) {
               width='10'
             />
           </Arrow>
+          <DropBox on={on}></DropBox>
         </Container>
       );
     case "domain":
@@ -32,15 +32,14 @@ export default function SelectMenu({ keyword }) {
         <Container
           onClick={() => {
             setOn(!on);
-            console.log(on);
           }}>
-          <div>
+          <Icon_>
             <Icon
               icon='material-symbols:border-all'
               color={theme.color.sub2}
               width='14'
             />
-          </div>
+          </Icon_>
           도메인
           <Arrow on={on}>
             <Icon
@@ -49,6 +48,7 @@ export default function SelectMenu({ keyword }) {
               width='10'
             />
           </Arrow>
+          <DropBox on={on}></DropBox>
         </Container>
       );
     case "tag":
@@ -56,11 +56,10 @@ export default function SelectMenu({ keyword }) {
         <Container
           onClick={() => {
             setOn(!on);
-            console.log(on);
           }}>
-          <div>
+          <Icon_>
             <Icon icon='ph:tag-fill' color={theme.color.sub2} width='14' />
-          </div>
+          </Icon_>
           태그
           <Arrow on={on}>
             <Icon
@@ -69,6 +68,7 @@ export default function SelectMenu({ keyword }) {
               width='10'
             />
           </Arrow>
+          <DropBox on={on}></DropBox>
         </Container>
       );
     default:
@@ -77,6 +77,8 @@ export default function SelectMenu({ keyword }) {
 }
 
 const Container = styled.div`
+  overflow: visible;
+  position: relative;
   padding-left: 6px;
   padding-right: 6px;
   height: 24px;
@@ -90,14 +92,15 @@ const Container = styled.div`
   font-size: ${({ theme }) => theme.size.microMedium};
   font-weight: ${({ theme }) => theme.weight.microMedium};
   cursor: pointer;
-  div {
-    width: 14px;
-    height: 14px;
-    overflow: visible;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+`;
+
+const Icon_ = styled.div`
+  width: 14px;
+  height: 14px;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Arrow = styled.div`
@@ -108,4 +111,19 @@ const Arrow = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const DropBox = styled.div`
+  opacity: ${({ on }) => (on ? "1" : "0")};
+  width: 100px;
+  transition: 0.2s linear;
+  height: ${({ on }) => (on ? "100px" : "0px")};
+  flex: 0;
+  top: 26px;
+  left: 0px;
+  position: absolute;
+  background-color: red;
+  background-color: ${({ theme }) => theme.color.menuback};
+  border: 1px solid ${({ theme }) => theme.color.text2};
+  border-radius: 4px;
 `;
