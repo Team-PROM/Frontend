@@ -5,71 +5,107 @@ import { theme } from "../styles/theme";
 
 export default function SelectMenu({ keyword }) {
   const [on, setOn] = useState(false);
+  const [mouseOver, setMouseOver] = useState(false);
 
   switch (keyword) {
     case "team":
       return (
-        <Container
-          onClick={() => {
-            setOn(!on);
-          }}>
-          <Icon_>
-            <Icon icon='ion:people-sharp' color={theme.color.sub2} width='14' />
-          </Icon_>
-          팀원
-          <Arrow on={on}>
-            <Icon
-              icon='fluent:ios-arrow-24-filled'
-              color={theme.color.sub2}
-              width='10'
-            />
-          </Arrow>
-          <DropBox on={on}></DropBox>
-        </Container>
+        <>
+          <Container
+            onClick={() => {
+              setOn(true);
+            }}>
+            <Icon_>
+              <Icon
+                icon='ion:people-sharp'
+                color={theme.color.sub2}
+                width='14'
+              />
+            </Icon_>
+            팀원
+            <Arrow on={on}>
+              <Icon
+                icon='fluent:ios-arrow-24-filled'
+                color={theme.color.sub2}
+                width='10'
+              />
+            </Arrow>
+            <DropBox
+              on={on}
+              onMouseOver={() => {
+                setMouseOver(false);
+              }}
+              onMouseLeave={() => {
+                setMouseOver(true);
+              }}></DropBox>
+          </Container>
+
+          <Back
+            on={on}
+            onClick={() => {
+              setOn(false);
+            }}></Back>
+        </>
       );
     case "domain":
       return (
-        <Container
-          onClick={() => {
-            setOn(!on);
-          }}>
-          <Icon_>
-            <Icon
-              icon='material-symbols:border-all'
-              color={theme.color.sub2}
-              width='14'
-            />
-          </Icon_>
-          도메인
-          <Arrow on={on}>
-            <Icon
-              icon='fluent:ios-arrow-24-filled'
-              color={theme.color.sub2}
-              width='10'
-            />
-          </Arrow>
-          <DropBox on={on}></DropBox>
-        </Container>
+        <>
+          <Container
+            onClick={() => {
+              setOn(!on);
+            }}>
+            <Icon_>
+              <Icon
+                icon='material-symbols:border-all'
+                color={theme.color.sub2}
+                width='14'
+              />
+            </Icon_>
+            도메인
+            <Arrow on={on}>
+              <Icon
+                icon='fluent:ios-arrow-24-filled'
+                color={theme.color.sub2}
+                width='10'
+              />
+            </Arrow>
+            <DropBox on={on}></DropBox>
+          </Container>
+
+          <Back
+            on={on}
+            onClick={() => {
+              setOn(false);
+            }}></Back>
+        </>
       );
     case "tag":
       return (
-        <Container
-          onClick={() => {
-            setOn(!on);
-          }}>
-          <Icon_>
-            <Icon icon='ph:tag-fill' color={theme.color.sub2} width='14' />
-          </Icon_>
-          태그
-          <Arrow on={on}>
-            <Icon
-              icon='fluent:ios-arrow-24-filled'
-              color={theme.color.sub2}
-              width='10'
-            />
-          </Arrow>
-          <DropBox on={on}></DropBox>
-        </Container>
+        <>
+          <Container
+            onClick={() => {
+              setOn(!on);
+            }}>
+            <Icon_>
+              <Icon icon='ph:tag-fill' color={theme.color.sub2} width='14' />
+            </Icon_>
+            태그
+            <Arrow on={on}>
+              <Icon
+                icon='fluent:ios-arrow-24-filled'
+                color={theme.color.sub2}
+                width='10'
+              />
+            </Arrow>
+            <DropBox on={on}></DropBox>
+          </Container>
+
+          <Back
+            on={on}
+            onClick={() => {
+              setOn(false);
+            }}></Back>
+        </>
       );
     default:
       return null;
@@ -126,4 +162,15 @@ const DropBox = styled.div`
   background-color: ${({ theme }) => theme.color.menuback};
   border: 1px solid ${({ theme }) => theme.color.text2};
   border-radius: 4px;
+  z-index: 2;
+`;
+
+const Back = styled.div`
+  left: -20px;
+  opacity: ${({ on }) => (on ? "1" : "0")};
+  width: ${({ on }) => (on ? "3000px" : "0px")};
+  transition: 0.2s linear;
+  height: ${({ on }) => (on ? "3000px" : "0px")};
+  position: absolute;
+  z-index: 1;
 `;
