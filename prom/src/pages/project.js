@@ -4,23 +4,33 @@ import KanbanBoard from "../components/kanbanBoard";
 import Body from "../components/common/pageBody";
 import SelectMenu from "../components/selectMenu";
 import ToggleButton from "../components/toggleButton";
+import SearchInput from "../components/searchInput";
 
 export default function ProjectPage() {
   return (
     <Body>
       <TopContainer>
-        <SelectMenu keyword='team' />
-        <SelectMenu keyword='domain' />
-        <SelectMenu keyword='tag' />
-        <ToggleButton />
+        <SearchInput />
+        <SelectContainer>
+          <SelectMenu keyword='team' />
+          <SelectMenu keyword='domain' />
+          <SelectMenu keyword='tag' />
+          <ToggleButton />
+        </SelectContainer>
       </TopContainer>
-      <KanbanBoard></KanbanBoard>
+      <KanbanBoard />
     </Body>
   );
 }
 
 const TopContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-left: 30px;
+  gap: 30px;
+`;
+
+const SelectContainer = styled.div`
   gap: 8px;
   display: flex;
   align-items: center;
