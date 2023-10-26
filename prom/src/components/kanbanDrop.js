@@ -4,30 +4,20 @@ import { styled } from "styled-components";
 
 export default function kanbanDrop({ columnId, column }) {
   return (
-    <Wrapper>
-      <Droppable droppableId={columnId} key={columnId}>
-        {(provided, snapshot) => {
-          return (
-            <Container {...provided.droppableProps} ref={provided.innerRef}>
-              {column.items.map((item, index) => {
-                return <Item item={item} index={index} key={index} />;
-              })}
-              {provided.placeholder}
-            </Container>
-          );
-        }}
-      </Droppable>
-    </Wrapper>
+    <Droppable droppableId={columnId} key={columnId}>
+      {(provided, snapshot) => {
+        return (
+          <Container {...provided.droppableProps} ref={provided.innerRef}>
+            {column.items.map((item, index) => {
+              return <Item item={item} index={index} key={index} />;
+            })}
+            {provided.placeholder}
+          </Container>
+        );
+      }}
+    </Droppable>
   );
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 280px;
-  height: 600px;
-`;
 
 const Container = styled.div`
   display: flex;
@@ -36,4 +26,10 @@ const Container = styled.div`
   min-width: 280px;
   height: 600px;
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  > :last-child {
+    margin-bottom: 50px;
+  }
 `;
