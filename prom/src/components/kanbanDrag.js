@@ -51,6 +51,7 @@ const Block = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex: none;
 `;
 
 const BlockTop = styled.div`
