@@ -15,6 +15,7 @@ const tasks = [
   { id: "3", title: "세번째 아이템", content: "Third task", progress: 42 },
   { id: "4", title: "네번째 아이템", content: "Fourth task", progress: 80 },
   { id: "5", title: "다섯번째 아이템", content: "Fifth task", progress: 2 },
+  { id: "6", title: "6번째 아이템", content: "funcasdasjn", progress: 2 },
 ];
 
 const taskStatus = {
