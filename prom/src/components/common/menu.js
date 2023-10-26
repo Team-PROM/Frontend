@@ -36,9 +36,11 @@ export default function Menu() {
   return (
     <Body>
       <Color
-        style={{
-          background: `linear-gradient(135deg, rgba(${rand.a}, ${rand.b}, ${rand.c}, 0.30) 0%, rgba(${rand.d}, ${rand.e}, ${rand.f}, 0.30) 100%)`,
-        }}>
+        style={
+          {
+            // background: `linear-gradient(135deg, rgba(${rand.a}, ${rand.b}, ${rand.c}, 0.30) 0%, rgba(${rand.d}, ${rand.e}, ${rand.f}, 0.30) 100%)`,
+          }
+        }>
         <Project>
           <TitleContainer>
             <TitleLogo></TitleLogo>
@@ -79,7 +81,7 @@ export default function Menu() {
 
 const Body = styled.div`
   width: 218px;
-  background-color: ${({ theme }) => theme.color.background};
+  background-color: ${({ theme }) => theme.color.menuback};
   color: white;
 `;
 
