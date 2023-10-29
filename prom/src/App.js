@@ -6,13 +6,19 @@ import Header from "./components/common/header";
 import Menu from "./components/common/menu";
 import { Router } from "./router";
 import { GlobalFont } from "./styles/GlobalFont";
+import Modal from "./components/modal/modal";
+import { useRecoilState } from "recoil";
+import { modalState } from "./utils/atom";
 
 export default function App() {
+  const [useModalState, setModalState] = useRecoilState(modalState);
+
   return (
     <Wrapper>
       <GlobalFont />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        {useModalState && <Modal />}
         <Menu></Menu>
         <SmallWrapper>
           <Header />
