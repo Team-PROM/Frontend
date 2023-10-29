@@ -20,7 +20,6 @@ export default function ModalBody({ children }) {
         onMouseLeave={() => {
           setIsHover(false);
         }}>
-        1213
         {children}
       </Body>
     </Body_>
