@@ -20,6 +20,7 @@ export default function ModalBody({ children }) {
         onMouseLeave={() => {
           setIsHover(false);
         }}>
+        1213
         {children}
       </Body>
     </Body_>
@@ -27,8 +28,9 @@ export default function ModalBody({ children }) {
 }
 
 const Body = styled.div`
-  width: 750px;
-  height: 270px;
+  padding: 14px 36px 20px 36px;
+  width: calc(750px - 36px - 36px);
+  height: calc(250px - 14px - 20px);
   border-radius: 10px;
   background-color: ${({ theme }) => theme.color.menuback};
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
