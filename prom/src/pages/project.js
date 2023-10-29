@@ -31,7 +31,9 @@ export default function ProjectPage() {
                 <Icon icon='ci:info' width='18' />
               </div>
             </ProgressText>
-            <ProgressBar></ProgressBar>
+            <ProgressBar>
+              <div></div>
+            </ProgressBar>
           </TaskProgress>
         </TopRightContainer>
       </TopContainer>
@@ -63,6 +65,9 @@ const TaskProgress = styled.div`
   border-radius: 15px;
   background-color: ${({ theme }) => theme.color.gray1};
   border: 1px solid ${({ theme }) => theme.color.text2};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const ProgressText = styled.div`
@@ -87,7 +92,19 @@ const ProgressText = styled.div`
   }
 `;
 
-const ProgressBar = styled.div``;
+const ProgressBar = styled.div`
+  width: 100%;
+  height: 8px;
+  background-color: ${({ theme }) => theme.color.background};
+  border-radius: 14px;
+  div {
+    border-radius: 14px;
+    width: calc(100%);
+    height: 100%;
+    background-color: #6dff7c;
+  }
+  margin-bottom: 5px;
+`;
 
 const SelectContainer = styled.div`
   gap: 8px;
