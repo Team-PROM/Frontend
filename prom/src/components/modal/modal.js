@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import { modalState } from "../../utils/atom";
-import ModalBackground from "./modalBackground";
+import ModalBody from "./modalBody";
 
 export default function Modal() {
   const [useModalState, setModalState] = useRecoilState(modalState);
@@ -8,9 +8,9 @@ export default function Modal() {
   const modalComponent = () => {
     switch (useModalState) {
       case "project":
-        return;
+        return <ModalBody></ModalBody>;
     }
   };
 
-  return <ModalBackground>{modalComponent}</ModalBackground>;
+  return <>{modalComponent()}</>;
 }
