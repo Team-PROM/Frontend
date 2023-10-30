@@ -15,7 +15,7 @@ const color = {
   text3: "#D6DADF",
 
   white: "#FFFFFF",
-  gray1: "#2E2E2E",
+  gray1: "#252631",
   gray2: "#414347",
 };
 
