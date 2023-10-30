@@ -24,7 +24,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   min-width: 280px;
-  height: 600px;
+  height: 550px;
+  padding-bottom: 50px;
   overflow-y: auto;
   &::-webkit-scrollbar {
     width: 0px;
