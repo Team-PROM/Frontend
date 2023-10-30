@@ -33,6 +33,7 @@ const Body = styled.div`
   border-radius: 10px;
   background-color: ${({ theme }) => theme.color.menuback};
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-bottom: 60px;
 `;
 
 const Body_ = styled.div`
